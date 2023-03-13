@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="nexys_hdmi_bench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="dvi_constants" />
+            <top_module name="glbl" />
+            <top_module name="nexys_hdmi_bench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="2523978850544fs"></ZoomStartTime>
+      <ZoomEndTime time="2660880582225fs"></ZoomEndTime>
+      <Cursor1Time time="1351540500000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/nexys_hdmi_bench/clk_in" type="logic">
+      <obj_property name="ElementShortName">clk_in</obj_property>
+      <obj_property name="ObjectShortName">clk_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/hdmi_clk_n" type="logic">
+      <obj_property name="ElementShortName">hdmi_clk_n</obj_property>
+      <obj_property name="ObjectShortName">hdmi_clk_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/hdmi_clk_p" type="logic">
+      <obj_property name="ElementShortName">hdmi_clk_p</obj_property>
+      <obj_property name="ObjectShortName">hdmi_clk_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/hdmi_n" type="array">
+      <obj_property name="ElementShortName">hdmi_n[2:0]</obj_property>
+      <obj_property name="ObjectShortName">hdmi_n[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/hdmi_p" type="array">
+      <obj_property name="ElementShortName">hdmi_p[2:0]</obj_property>
+      <obj_property name="ObjectShortName">hdmi_p[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/sigLed" type="array">
+      <obj_property name="ElementShortName">sigLed[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sigLed[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/clk_in_half_period" type="other">
+      <obj_property name="ElementShortName">clk_in_half_period</obj_property>
+      <obj_property name="ObjectShortName">clk_in_half_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/hc_v" type="other">
+      <obj_property name="ElementShortName">hc_v</obj_property>
+      <obj_property name="ObjectShortName">hc_v</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/vga0/hc" type="other">
+      <obj_property name="ElementShortName">hc</obj_property>
+      <obj_property name="ObjectShortName">hc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/vid_h_visible" type="logic">
+      <obj_property name="ElementShortName">vid_h_visible</obj_property>
+      <obj_property name="ObjectShortName">vid_h_visible</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/vid_v_visible" type="logic">
+      <obj_property name="ElementShortName">vid_v_visible</obj_property>
+      <obj_property name="ObjectShortName">vid_v_visible</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/vid_screen_v_int" type="other">
+      <obj_property name="ElementShortName">vid_screen_v_int</obj_property>
+      <obj_property name="ObjectShortName">vid_screen_v_int</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/vid_screen_h_int" type="other">
+      <obj_property name="ElementShortName">vid_screen_h_int</obj_property>
+      <obj_property name="ObjectShortName">vid_screen_h_int</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/si_state_vga" type="other">
+      <obj_property name="ElementShortName">si_state_vga</obj_property>
+      <obj_property name="ObjectShortName">si_state_vga</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/si_state_frame" type="other">
+      <obj_property name="ElementShortName">si_state_frame</obj_property>
+      <obj_property name="ObjectShortName">si_state_frame</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/si_rotate_screen" type="array">
+      <obj_property name="ElementShortName">si_rotate_screen[1:0]</obj_property>
+      <obj_property name="ObjectShortName">si_rotate_screen[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/mem_addrb" type="array">
+      <obj_property name="ElementShortName">mem_addrb[10:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_addrb[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/mem_addra" type="array">
+      <obj_property name="ElementShortName">mem_addra[10:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_addra[10:0]</obj_property>
+   </wvobject>
+</wave_config>

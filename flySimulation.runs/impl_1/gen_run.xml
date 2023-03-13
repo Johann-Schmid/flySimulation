@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1678719435">
+  <File Type="ROUTE-PWR" Name="nexys_hdmi_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="nexys_hdmi.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="nexys_hdmi_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="nexys_hdmi_reports.tcl"/>
+  <File Type="BITSTR-MSK" Name="nexys_hdmi.msk"/>
+  <File Type="ROUTE-CLK" Name="nexys_hdmi_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="nexys_hdmi.vdi"/>
+  <File Type="BG-BIT" Name="nexys_hdmi.bit"/>
+  <File Type="BG-DRC" Name="nexys_hdmi.drc"/>
+  <File Type="BG-BGN" Name="nexys_hdmi.bgn"/>
+  <File Type="BG-BIN" Name="nexys_hdmi.bin"/>
+  <File Type="BITSTR-RBT" Name="nexys_hdmi.rbt"/>
+  <File Type="BITSTR-NKY" Name="nexys_hdmi.nky"/>
+  <File Type="BITSTR-BMM" Name="nexys_hdmi_bd.bmm"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="nexys_hdmi_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="nexys_hdmi.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="nexys_hdmi.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="nexys_hdmi.ltx"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="OPT-DRC" Name="nexys_hdmi_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="nexys_hdmi.hwdef"/>
+  <File Type="PLACE-IO" Name="nexys_hdmi_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="nexys_hdmi_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="nexys_hdmi_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="nexys_hdmi_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="nexys_hdmi_incremental_reuse_pre_placed.rpt"/>
+  <File Type="ROUTE-DRC" Name="nexys_hdmi_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="nexys_hdmi_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="nexys_hdmi_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="nexys_hdmi_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="nexys_hdmi_route_status.pb"/>
+  <File Type="ROUTE-DCP" Name="nexys_hdmi_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="nexys_hdmi_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="nexys_hdmi_routed_bb.dcp"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="nexys_hdmi_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="nexys_hdmi_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="nexys_hdmi_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW" Name="nexys_hdmi_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="nexys_hdmi_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="nexys_hdmi_bus_skew_routed.rpx"/>
+  <File Type="OPT-DCP" Name="nexys_hdmi_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="nexys_hdmi_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="nexys_hdmi_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="nexys_hdmi_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="nexys_hdmi_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="nexys_hdmi_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="nexys_hdmi_postroute_physopt_bb.dcp"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="nexys_hdmi_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="nexys_hdmi_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="nexys_hdmi_methodology_drc_routed.rpx"/>
+  <File Type="PDI-FILE" Name="nexys_hdmi.pdi"/>
+  <File Type="RCFI_FILE" Name="nexys_hdmi.rcfi"/>
+  <File Type="CFI_FILE" Name="nexys_hdmi.cfi"/>
+  <File Type="RNPI_FILE" Name="nexys_hdmi.rnpi"/>
+  <File Type="NPI_FILE" Name="nexys_hdmi.npi"/>
+  <File Type="RBD_FILE" Name="nexys_hdmi.rbd"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../workUni/brembs/brems/flyRGB2v2/flyRGB2v2.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci"/>
+        <Attr Name="ImportTime" Val="1556628710"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/brems/project_10/uart.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../workUni/brembs/brems/project_10/uart.vhd"/>
+        <Attr Name="ImportTime" Val="1503576678"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/brems/project_6/vga_hdmi.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../workUni/brembs/brems/project_6/vga_hdmi.vhd"/>
+        <Attr Name="ImportTime" Val="1553171268"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/nexys_hdmi.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../workUni/brembs/brems/project_3/project_3.srcs/sources_1/new/nexys_hdmi.vhd"/>
+        <Attr Name="ImportTime" Val="1532528999"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/flyRGB2v1/mem_t_new.coe">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../workUni/brembs/brems/flyRGB2v1/mem_t_new.coe"/>
+        <Attr Name="ImportTime" Val="1556524399"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/flyRGB2v2/mem_t_new.coe">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../workUni/brembs/brems/flyRGB2v2/mem_t_new.coe"/>
+        <Attr Name="ImportTime" Val="1556524399"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/blk_mem_gen_0.xcix">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../workUni/brembs/brems/flyRGB2v2/flyRGB2v2.srcs/sources_1/ip/blk_mem_gen_0.xcix"/>
+        <Attr Name="ImportTime" Val="1556628911"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="nexys_hdmi"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/project_3/NexysVideo_Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../workUni/brembs/brems/project_3/NexysVideo_Master.xdc"/>
+        <Attr Name="ImportTime" Val="1553244573"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="rgb2dvi_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="xadc_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+</GenRun>
