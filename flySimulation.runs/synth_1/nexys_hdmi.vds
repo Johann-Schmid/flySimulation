@@ -2,16 +2,16 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Mon Mar 13 15:53:33 2023
-# Process ID: 25440
-# Current directory: D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1
+# Start of session at: Thu Mar 16 14:11:49 2023
+# Process ID: 17896
+# Current directory: D:/flySimulation/flySimulation.runs/synth_1
 # Command line: vivado.exe -log nexys_hdmi.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source nexys_hdmi.tcl
-# Log file: D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/nexys_hdmi.vds
-# Journal file: D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1\vivado.jou
+# Log file: D:/flySimulation/flySimulation.runs/synth_1/nexys_hdmi.vds
+# Journal file: D:/flySimulation/flySimulation.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source nexys_hdmi.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/vivado-library-master'; Can't find the specified path.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/flySimulation/flySimulation.runs/synth_1/vivado-library-master'; Can't find the specified path.
 If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.1/data/ip'.
 Command: synth_design -top nexys_hdmi -part xc7a200tsbg484-1
@@ -23,14 +23,13 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200
 INFO: [Device 21-403] Loading part xc7a200tsbg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 18092
+INFO: [Synth 8-7075] Helper process launched with PID 27116
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1026.824 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1055.238 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'nexys_hdmi' [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/new/nexys_hdmi.vhd:53]
-WARNING: [Synth 8-506] null port 'SW' ignored [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/new/nexys_hdmi.vhd:37]
-INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'd:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/blk_mem_gen_0/synth/blk_mem_gen_0.vhd:59' bound to instance 'blk_mem' of component 'blk_mem_gen_0' [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/new/nexys_hdmi.vhd:223]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/blk_mem_gen_0/synth/blk_mem_gen_0.vhd:73]
+INFO: [Synth 8-638] synthesizing module 'nexys_hdmi' [D:/flySimulation/flySimulation.srcs/sources_1/new/nexys_hdmi.vhd:52]
+INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'd:/flySimulation/flySimulation.srcs/sources_1/ip/blk_mem_gen_0/synth/blk_mem_gen_0.vhd:59' bound to instance 'blk_mem' of component 'blk_mem_gen_0' [D:/flySimulation/flySimulation.srcs/sources_1/new/nexys_hdmi.vhd:223]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [d:/flySimulation/flySimulation.srcs/sources_1/ip/blk_mem_gen_0/synth/blk_mem_gen_0.vhd:73]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
@@ -106,114 +105,105 @@ INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [d:/flyHDMI/flyHDMI2v4/f
 	Parameter C_COUNT_36K_BRAM bound to: 56 - type: string 
 	Parameter C_COUNT_18K_BRAM bound to: 0 - type: string 
 	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     211.558048 mW - type: string 
-INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_4' declared at 'd:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/blk_mem_gen_0/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_4' [d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/blk_mem_gen_0/synth/blk_mem_gen_0.vhd:243]
-INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (11#1) [d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/blk_mem_gen_0/synth/blk_mem_gen_0.vhd:73]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/realtime/clk_wiz_0_stub.v:5' bound to instance 'pll0' of component 'clk_wiz_0' [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/new/nexys_hdmi.vhd:234]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (12#1) [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-3491] module 'rgb2dvi_0' declared at 'D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/realtime/rgb2dvi_0_stub.v:6' bound to instance 'rgb2dvi' of component 'rgb2dvi_0' [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/new/nexys_hdmi.vhd:239]
-INFO: [Synth 8-6157] synthesizing module 'rgb2dvi_0' [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/realtime/rgb2dvi_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'rgb2dvi_0' (13#1) [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/realtime/rgb2dvi_0_stub.v:6]
-INFO: [Synth 8-3491] module 'vga_800' declared at 'D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/imports/brems/project_6/vga_hdmi.vhd:5' bound to instance 'vga0' of component 'vga_800' [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/new/nexys_hdmi.vhd:252]
-INFO: [Synth 8-638] synthesizing module 'vga_800' [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/imports/brems/project_6/vga_hdmi.vhd:20]
-INFO: [Synth 8-256] done synthesizing module 'vga_800' (14#1) [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/imports/brems/project_6/vga_hdmi.vhd:20]
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_4' declared at 'd:/flySimulation/flySimulation.srcs/sources_1/ip/blk_mem_gen_0/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_4' [d:/flySimulation/flySimulation.srcs/sources_1/ip/blk_mem_gen_0/synth/blk_mem_gen_0.vhd:243]
+INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (11#1) [d:/flySimulation/flySimulation.srcs/sources_1/ip/blk_mem_gen_0/synth/blk_mem_gen_0.vhd:73]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/realtime/clk_wiz_0_stub.v:5' bound to instance 'pll0' of component 'clk_wiz_0' [D:/flySimulation/flySimulation.srcs/sources_1/new/nexys_hdmi.vhd:234]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (12#1) [D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-3491] module 'rgb2dvi_0' declared at 'D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/realtime/rgb2dvi_0_stub.v:6' bound to instance 'rgb2dvi' of component 'rgb2dvi_0' [D:/flySimulation/flySimulation.srcs/sources_1/new/nexys_hdmi.vhd:239]
+INFO: [Synth 8-6157] synthesizing module 'rgb2dvi_0' [D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/realtime/rgb2dvi_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'rgb2dvi_0' (13#1) [D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/realtime/rgb2dvi_0_stub.v:6]
+INFO: [Synth 8-3491] module 'vga_800' declared at 'D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_6/vga_hdmi.vhd:5' bound to instance 'vga0' of component 'vga_800' [D:/flySimulation/flySimulation.srcs/sources_1/new/nexys_hdmi.vhd:252]
+INFO: [Synth 8-638] synthesizing module 'vga_800' [D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_6/vga_hdmi.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'vga_800' (14#1) [D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_6/vga_hdmi.vhd:20]
 	Parameter clk_freq bound to: 40000000 - type: integer 
 	Parameter baudrate bound to: 115200 - type: integer 
-INFO: [Synth 8-3491] module 'p13_UART' declared at 'D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/imports/brems/project_10/uart.vhd:5' bound to instance 'u0' of component 'p13_UART' [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/new/nexys_hdmi.vhd:265]
-INFO: [Synth 8-638] synthesizing module 'p13_UART' [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/imports/brems/project_10/uart.vhd:21]
+INFO: [Synth 8-3491] module 'p13_UART' declared at 'D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_10/uart.vhd:5' bound to instance 'u0' of component 'p13_UART' [D:/flySimulation/flySimulation.srcs/sources_1/new/nexys_hdmi.vhd:265]
+INFO: [Synth 8-638] synthesizing module 'p13_UART' [D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_10/uart.vhd:21]
 	Parameter clk_freq bound to: 40000000 - type: integer 
 	Parameter baudrate bound to: 115200 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'p13_UART' (15#1) [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/imports/brems/project_10/uart.vhd:21]
-INFO: [Synth 8-3491] module 'xadc_wiz_0' declared at 'D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/realtime/xadc_wiz_0_stub.v:5' bound to instance 'xadc' of component 'xadc_wiz_0' [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/new/nexys_hdmi.vhd:279]
-INFO: [Synth 8-6157] synthesizing module 'xadc_wiz_0' [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/realtime/xadc_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'xadc_wiz_0' (16#1) [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/realtime/xadc_wiz_0_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'nexys_hdmi' (17#1) [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/new/nexys_hdmi.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'p13_UART' (15#1) [D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_10/uart.vhd:21]
+INFO: [Synth 8-3491] module 'xadc_wiz_0' declared at 'D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/realtime/xadc_wiz_0_stub.v:5' bound to instance 'xadc' of component 'xadc_wiz_0' [D:/flySimulation/flySimulation.srcs/sources_1/new/nexys_hdmi.vhd:279]
+INFO: [Synth 8-6157] synthesizing module 'xadc_wiz_0' [D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/realtime/xadc_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'xadc_wiz_0' (16#1) [D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/realtime/xadc_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'nexys_hdmi' (17#1) [D:/flySimulation/flySimulation.srcs/sources_1/new/nexys_hdmi.vhd:52]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 1481.008 ; gain = 454.184
+Finished RTL Elaboration : Time (s): cpu = 00:00:58 ; elapsed = 00:01:08 . Memory (MB): peak = 1480.980 ; gain = 425.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1481.008 ; gain = 454.184
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:59 ; elapsed = 00:01:09 . Memory (MB): peak = 1480.980 ; gain = 425.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1481.008 ; gain = 454.184
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:59 ; elapsed = 00:01:09 . Memory (MB): peak = 1480.980 ; gain = 425.742
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.357 . Memory (MB): peak = 1481.008 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.354 . Memory (MB): peak = 1480.980 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 56 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc] for cell 'rgb2dvi'
-Finished Parsing XDC File [d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc] for cell 'rgb2dvi'
-Parsing XDC File [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/xadc_wiz_0_1/xadc_wiz_0/xadc_wiz_0_in_context.xdc] for cell 'xadc'
-Finished Parsing XDC File [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/xadc_wiz_0_1/xadc_wiz_0/xadc_wiz_0_in_context.xdc] for cell 'xadc'
-Parsing XDC File [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'pll0'
-WARNING: [Vivado 12-584] No ports matched ''. [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc:1]
-WARNING: [Vivado 12-584] No ports matched ''. [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc:4]
-Finished Parsing XDC File [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'pll0'
-Parsing XDC File [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc]
-WARNING: [Vivado 12-584] No ports matched 'SW[0]'. [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc:39]
-WARNING: [Vivado 12-584] No ports matched 'SW[1]'. [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc:40]
-WARNING: [Vivado 12-584] No ports matched 'SW[2]'. [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc:41]
-WARNING: [Vivado 12-584] No ports matched 'SW[3]'. [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc:42]
-WARNING: [Vivado 12-584] No ports matched 'SW[4]'. [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc:43]
-WARNING: [Vivado 12-584] No ports matched 'SW[5]'. [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc:44]
-WARNING: [Vivado 12-584] No ports matched 'SW[6]'. [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc:45]
-WARNING: [Vivado 12-584] No ports matched 'SW[7]'. [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc:46]
-Finished Parsing XDC File [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/nexys_hdmi_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/nexys_hdmi_propImpl.xdc].
+Parsing XDC File [d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc] for cell 'rgb2dvi'
+Finished Parsing XDC File [d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc] for cell 'rgb2dvi'
+Parsing XDC File [D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/xadc_wiz_0_1/xadc_wiz_0/xadc_wiz_0_in_context.xdc] for cell 'xadc'
+Finished Parsing XDC File [D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/xadc_wiz_0_1/xadc_wiz_0/xadc_wiz_0_in_context.xdc] for cell 'xadc'
+Parsing XDC File [D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'pll0'
+WARNING: [Vivado 12-584] No ports matched ''. [D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc:1]
+WARNING: [Vivado 12-584] No ports matched ''. [D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc:4]
+Finished Parsing XDC File [D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'pll0'
+Parsing XDC File [D:/flySimulation/flySimulation.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc]
+Finished Parsing XDC File [D:/flySimulation/flySimulation.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/flySimulation/flySimulation.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/nexys_hdmi_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/nexys_hdmi_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [D:/flySimulation/flySimulation.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/flySimulation/flySimulation.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1481.008 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1480.980 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.087 . Memory (MB): peak = 1481.008 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.148 . Memory (MB): peak = 1480.980 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:09 ; elapsed = 00:01:11 . Memory (MB): peak = 1481.008 ; gain = 454.184
+Finished Constraint Validation : Time (s): cpu = 00:01:09 ; elapsed = 00:01:20 . Memory (MB): peak = 1480.980 ; gain = 425.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tsbg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:09 ; elapsed = 00:01:11 . Memory (MB): peak = 1481.008 ; gain = 454.184
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:09 ; elapsed = 00:01:20 . Memory (MB): peak = 1480.980 ; gain = 425.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_clk_n. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 1).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_clk_n. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 2).
-Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_clk_p. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_clk_p. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 4).
-Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_n[0]. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 5).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_n[0]. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 6).
-Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_n[1]. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 7).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_n[1]. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 8).
-Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_n[2]. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 9).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_n[2]. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 10).
-Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_p[0]. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 11).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_p[0]. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 12).
-Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_p[1]. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 13).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_p[1]. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 14).
-Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_p[2]. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 15).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_p[2]. (constraint file  d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 16).
-Applied set_property IO_BUFFER_TYPE = NONE for CLK. (constraint file  D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc, line 5).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK. (constraint file  D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/.Xil/Vivado-25440-PC1012002888/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_clk_n. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 1).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_clk_n. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 2).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_clk_p. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_clk_p. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_n[0]. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_n[0]. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_n[1]. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_n[1]. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 8).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_n[2]. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 9).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_n[2]. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 10).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_p[0]. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 11).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_p[0]. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 12).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_p[1]. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 13).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_p[1]. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 14).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tx_p[2]. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 15).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tx_p[2]. (constraint file  d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0/rgb2dvi_0_in_context.xdc, line 16).
+Applied set_property IO_BUFFER_TYPE = NONE for CLK. (constraint file  D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK. (constraint file  D:/flySimulation/flySimulation.runs/synth_1/.Xil/Vivado-17896-PC1012002888/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc, line 6).
 Applied set_property DONT_TOUCH = true for blk_mem. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for rgb2dvi. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for xadc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for pll0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:09 ; elapsed = 00:01:11 . Memory (MB): peak = 1481.008 ; gain = 454.184
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:09 ; elapsed = 00:01:20 . Memory (MB): peak = 1480.980 ; gain = 425.742
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'zustand_rcv_reg' in module 'p13_UART'
 INFO: [Synth 8-802] inferred FSM for state register 'si_calc_uart_reg' in module 'nexys_hdmi'
@@ -230,14 +220,6 @@ INFO: [Synth 8-3354] encoded FSM with state register 'zustand_rcv_reg' using enc
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                  iSTATE |                               01 |                              000
-*
-                 iSTATE0 |                               10 |                              001
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'si_calc_uart_reg' using encoding 'one-hot' in module 'nexys_hdmi'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
                   iSTATE |                            00001 |                              000
 *
                  iSTATE3 |                            00010 |                              010
@@ -246,8 +228,16 @@ INFO: [Synth 8-3354] encoded FSM with state register 'si_calc_uart_reg' using en
                  iSTATE2 |                            10000 |                              001
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'si_state_frame_reg' using encoding 'one-hot' in module 'nexys_hdmi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               01 |                              000
+*
+                 iSTATE0 |                               10 |                              001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'si_calc_uart_reg' using encoding 'one-hot' in module 'nexys_hdmi'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:13 ; elapsed = 00:01:15 . Memory (MB): peak = 1481.008 ; gain = 454.184
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:13 ; elapsed = 00:01:25 . Memory (MB): peak = 1480.980 ; gain = 425.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -276,11 +266,11 @@ Detailed RTL Component Info :
 	               11 Bit    Registers := 3     
 	               10 Bit    Registers := 3     
 	                9 Bit    Registers := 2     
-	                8 Bit    Registers := 5     
+	                8 Bit    Registers := 6     
 	                4 Bit    Registers := 4     
 	                3 Bit    Registers := 6     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 15    
+	                1 Bit    Registers := 16    
 +---Muxes : 
 	   4 Input  800 Bit        Muxes := 1     
 	   2 Input  800 Bit        Muxes := 3     
@@ -299,14 +289,14 @@ Detailed RTL Component Info :
 	   2 Input    3 Bit        Muxes := 6     
 	   7 Input    3 Bit        Muxes := 1     
 	   3 Input    3 Bit        Muxes := 1     
-	   3 Input    2 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 80    
-	   4 Input    1 Bit        Muxes := 7     
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 79    
+	   3 Input    1 Bit        Muxes := 4     
 	  18 Input    1 Bit        Muxes := 7     
+	   4 Input    1 Bit        Muxes := 7     
 	  11 Input    1 Bit        Muxes := 1     
 	   6 Input    1 Bit        Muxes := 1     
-	   3 Input    1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -323,25 +313,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:01 ; elapsed = 00:02:04 . Memory (MB): peak = 1481.008 ; gain = 454.184
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:59 ; elapsed = 00:02:11 . Memory (MB): peak = 1480.980 ; gain = 425.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:08 ; elapsed = 00:02:12 . Memory (MB): peak = 1481.008 ; gain = 454.184
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:06 ; elapsed = 00:02:19 . Memory (MB): peak = 1480.980 ; gain = 425.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:33 ; elapsed = 00:02:37 . Memory (MB): peak = 1579.523 ; gain = 552.699
+Finished Timing Optimization : Time (s): cpu = 00:02:29 ; elapsed = 00:02:42 . Memory (MB): peak = 1585.262 ; gain = 530.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:55 ; elapsed = 00:02:59 . Memory (MB): peak = 1608.922 ; gain = 582.098
+Finished Technology Mapping : Time (s): cpu = 00:02:55 ; elapsed = 00:03:09 . Memory (MB): peak = 1612.348 ; gain = 557.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -359,37 +349,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:03 ; elapsed = 00:03:07 . Memory (MB): peak = 1608.922 ; gain = 582.098
+Finished IO Insertion : Time (s): cpu = 00:03:03 ; elapsed = 00:03:17 . Memory (MB): peak = 1612.348 ; gain = 557.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:03 ; elapsed = 00:03:07 . Memory (MB): peak = 1608.922 ; gain = 582.098
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:03 ; elapsed = 00:03:17 . Memory (MB): peak = 1612.348 ; gain = 557.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:06 ; elapsed = 00:03:10 . Memory (MB): peak = 1608.922 ; gain = 582.098
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:06 ; elapsed = 00:03:20 . Memory (MB): peak = 1612.348 ; gain = 557.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:06 ; elapsed = 00:03:10 . Memory (MB): peak = 1608.922 ; gain = 582.098
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:06 ; elapsed = 00:03:20 . Memory (MB): peak = 1612.348 ; gain = 557.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:10 ; elapsed = 00:03:14 . Memory (MB): peak = 1608.922 ; gain = 582.098
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:11 ; elapsed = 00:03:25 . Memory (MB): peak = 1612.348 ; gain = 557.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:10 ; elapsed = 00:03:15 . Memory (MB): peak = 1608.922 ; gain = 582.098
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:11 ; elapsed = 00:03:25 . Memory (MB): peak = 1612.348 ; gain = 557.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -412,41 +402,41 @@ Report Cell Usage:
 |2     |rgb2dvi  |     1|
 |3     |xadc_wiz |     1|
 |4     |CARRY4   |    27|
-|5     |LUT1     |    65|
-|6     |LUT2     |   114|
-|7     |LUT3     |  2678|
+|5     |LUT1     |    47|
+|6     |LUT2     |   115|
+|7     |LUT3     |  2677|
 |8     |LUT4     |  1230|
 |9     |LUT5     |  5531|
 |10    |LUT6     | 18767|
 |11    |MUXF7    |   109|
 |12    |MUXF8    |    53|
 |13    |RAMB36E1 |    56|
-|53    |FDRE     |  3010|
+|53    |FDRE     |  3038|
 |54    |FDSE     |    30|
 |55    |IBUF     |     5|
 |56    |OBUF     |    11|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:10 ; elapsed = 00:03:15 . Memory (MB): peak = 1608.922 ; gain = 582.098
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:11 ; elapsed = 00:03:25 . Memory (MB): peak = 1612.348 ; gain = 557.109
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:05 ; elapsed = 00:03:09 . Memory (MB): peak = 1608.922 ; gain = 582.098
-Synthesis Optimization Complete : Time (s): cpu = 00:03:10 ; elapsed = 00:03:15 . Memory (MB): peak = 1608.922 ; gain = 582.098
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:06 ; elapsed = 00:03:18 . Memory (MB): peak = 1612.348 ; gain = 557.109
+Synthesis Optimization Complete : Time (s): cpu = 00:03:11 ; elapsed = 00:03:25 . Memory (MB): peak = 1612.348 ; gain = 557.109
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.496 . Memory (MB): peak = 1608.922 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.508 . Memory (MB): peak = 1612.348 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 245 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'nexys_hdmi' is not ideal for floorplanning, since the cellview 'nexys_hdmi' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1608.922 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1612.348 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-47 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
+47 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:21 ; elapsed = 00:03:26 . Memory (MB): peak = 1608.922 ; gain = 582.098
-INFO: [Common 17-1381] The checkpoint 'D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/nexys_hdmi.dcp' has been generated.
+synth_design: Time (s): cpu = 00:03:21 ; elapsed = 00:03:40 . Memory (MB): peak = 1612.348 ; gain = 557.109
+INFO: [Common 17-1381] The checkpoint 'D:/flySimulation/flySimulation.runs/synth_1/nexys_hdmi.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file nexys_hdmi_utilization_synth.rpt -pb nexys_hdmi_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 13 15:57:07 2023...
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 16 14:15:46 2023...

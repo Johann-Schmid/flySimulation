@@ -34,7 +34,6 @@ use ieee.numeric_std.all;
 
 entity nexys_hdmi is Port(
     CLK: in std_logic;
-    SW: in std_logic_vector (0 downto 7);
     hdmi_tx_clk_n: out std_logic;
     hdmi_tx_clk_p: out std_logic;
     hdmi_tx_n: out std_logic_vector (2 downto 0);
@@ -139,9 +138,9 @@ end component;
 -- Clk
 signal clk_out: std_logic:='0';
 
--- SW
-signal integer_rotate_speed: integer range 0 to 255:= 1;
-signal integer_switch: integer range 0 to 255:= 0;
+-- open loop rotation
+signal integer_rotate_speed: integer range 0 to 255:= 0;
+signal uart_integer_rotate_speed: integer range 0 to 255:= 0;
 
 -- Video
 signal vid_Data: STD_LOGIC_VECTOR(23 downto 0):= (others => '1');
@@ -175,6 +174,7 @@ signal vid_screen_v_int: integer range 0 to 2047:= 0;
 
 -- adValue
 signal sig_sign: std_logic:='0';
+signal uart_sig_sign: std_logic:='0';
 
 -- rotate picture
 signal si_state_frame: integer range 0 to 7:= 0;
@@ -352,16 +352,16 @@ if (si_state_uart = 1) then
             si_value_pixel <= 0;
             -- ASCII '4'
         when 16#2D# =>
-            sig_sign <= '1';
+            uart_sig_sign <= '1';
             -- ASCII '-'
         when 16#2B# =>
-            sig_sign <= '0';
+            uart_sig_sign <= '0';
             -- ASCII '+'
         when 16#3C# =>
-            integer_rotate_speed <= integer_rotate_speed - 1;
+            uart_integer_rotate_speed <= integer_rotate_speed - 1;
             -- ASCII '<'
         when 16#3E# =>
-            integer_rotate_speed <= integer_rotate_speed + 1;
+            uart_integer_rotate_speed <= integer_rotate_speed + 1;
             -- ASCII '>'
         when others =>
             uart_mem_offset <= 0;    
@@ -396,8 +396,6 @@ end if;
 --###################################### uart-frame ############################################
 
     if ((frame = '1') and (ready_out = '1') and (si_state = 0) and (uart_start_in = '0') and (uart_on_off = '1')) then
-        --LED(7 downto 0) <= std_logic_vector(uart_do_xadc(15 downto 8));
-
         uart_byte_in <= std_logic_vector(uart_do_xadc(11 downto 4));
         rotate_value_ad <= uart_value_ad;
         uart_start_in <= '1';
@@ -469,15 +467,6 @@ end if;
 
 --##################################### screen update #################################################	
 if (si_state_vga = 0) and (vid_v_visible = '1') and (hc_v = 1) then
-
---    case si_screen is
---        when 0 =>
---            mem_addrb <= std_logic_vector(to_unsigned(vid_screen_v_int,mem_addrb'length));
---        when 1 =>
---            mem_addrb <= std_logic_vector(to_unsigned(vid_screen_v_int + 600,mem_addrb'length));
---        when others =>
---            mem_addrb <= std_logic_vector(to_unsigned(vid_screen_v_int,mem_addrb'length));
---    end case;
     mem_addrb <= std_logic_vector(to_unsigned(vid_screen_v_int + mem_offset,mem_addrb'length));
     si_state_vga <= 1;
 else
@@ -525,41 +514,26 @@ if (si_state_vga = 7) then
         else
             vid_Data <= (others => '0');
         end if;
---        if (si_buffer(vid_screen_h_int) = '1') then
---            vid_Data <= (others => '1');
---        else
---            vid_Data <= (others => '0');
---        end if;
     end if;
 else
 end if;
 
 --##################################### screen rotate #################################################	
 if (si_state_frame = 0) and (hc_v = 1) then
+
     if (vid_v_visible = '1') then
         si_state_frame <= 1;
     else
     end if;
     
---    if (vid_v_visible = '0') then
---        si_rotate_screen <= si_rotate_screen_uart;
---        si_state_frame <= 1;
---    else
---    end if;
-    
-    if (vid_v_visible = '0') and  (vid_h_visible = '0') then
+    if (vid_v_visible = '0') and (vid_h_visible = '0') then
         si_rotate_screen <= si_rotate_screen_uart;
         mem_offset <= uart_mem_offset;
---        --if (bo_mem_offset_changed = '1') then
---        if (bo_mem_offset_changed = '1') and (si_state_vga = 7) then
---            mem_offset <= uart_mem_offset;
---            si_value_pixel <= 0;
---            bo_mem_offset_changed <= '0';
---        else
---        end if;
-        si_state_frame <= 1;
+        sig_sign <= uart_sig_sign;
+        integer_rotate_speed <= uart_integer_rotate_speed;
     else
     end if;
+    
 else
 end if;
 

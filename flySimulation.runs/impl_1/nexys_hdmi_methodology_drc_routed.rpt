@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Mon Mar 13 16:02:57 2023
+| Date         : Thu Mar 16 14:30:53 2023
 | Host         : PC1012002888 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file nexys_hdmi_methodology_drc_routed.rpt -pb nexys_hdmi_methodology_drc_routed.pb -rpx nexys_hdmi_methodology_drc_routed.rpx
 | Design       : nexys_hdmi
@@ -56,7 +56,7 @@ Related violations: <none>
 XDCB-5#1 Warning
 Runtime inefficient way to find pin objects  
 The option '-through : [get_pins -filter {NAME =~ *SyncAsync*/oSyncStages_reg[0]/D} -hier]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '2' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
-Current XDC: d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/src/rgb2dvi.xdc (Line: 5)
+Current XDC: d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/src/rgb2dvi.xdc (Line: 5)
 Related violations: <none>
 
 

@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/impl_1'
+HD_PWD='D:/flySimulation/flySimulation.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

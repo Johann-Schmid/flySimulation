@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.runs/synth_1/nexys_hdmi.tcl"
+  variable script "D:/flySimulation/flySimulation.runs/synth_1/nexys_hdmi.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,9 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
 
@@ -80,40 +78,39 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.cache/wt [current_project]
-set_property parent.project_path D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.xpr [current_project]
+set_property webtalk.parent_dir D:/flySimulation/flySimulation.cache/wt [current_project]
+set_property parent.project_path D:/flySimulation/flySimulation.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths d:vivado-library-master [current_project]
+set_property ip_repo_paths vivado-library-master [current_project]
 update_ip_catalog
-set_property ip_output_repo d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.cache/ip [current_project]
+set_property ip_output_repo d:/flySimulation/flySimulation.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/imports/flyRGB2v1/mem_t_new.coe
-add_files D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/imports/flyRGB2v2/mem_t_new.coe
+add_files D:/flySimulation/flySimulation.srcs/sources_1/imports/flyRGB2v2/mem_t_new.coe
 read_vhdl -library xil_defaultlib {
-  D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/imports/brems/project_10/uart.vhd
-  D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/imports/brems/project_6/vga_hdmi.vhd
-  D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/new/nexys_hdmi.vhd
+  D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_10/uart.vhd
+  D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_6/vga_hdmi.vhd
+  D:/flySimulation/flySimulation.srcs/sources_1/new/nexys_hdmi.vhd
 }
-read_ip -quiet D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
-set_property used_in_implementation false [get_files -all d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
+read_ip -quiet D:/flySimulation/flySimulation.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+set_property used_in_implementation false [get_files -all d:/flySimulation/flySimulation.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
 
-read_ip -quiet D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0.xci
-set_property used_in_implementation false [get_files -all d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/src/rgb2dvi.xdc]
-set_property used_in_implementation false [get_files -all d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/src/rgb2dvi_ooc.xdc]
-set_property used_in_implementation false [get_files -all d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/rgb2dvi_0/src/rgb2dvi_clocks.xdc]
+read_ip -quiet D:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0.xci
+set_property used_in_implementation false [get_files -all d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/src/rgb2dvi.xdc]
+set_property used_in_implementation false [get_files -all d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/src/rgb2dvi_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/src/rgb2dvi_clocks.xdc]
 
-read_ip -quiet D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/xadc_wiz_0_1/xadc_wiz_0.xci
-set_property used_in_implementation false [get_files -all d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/xadc_wiz_0_1/xadc_wiz_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/sources_1/ip/xadc_wiz_0_1/xadc_wiz_0.xdc]
+read_ip -quiet D:/flySimulation/flySimulation.srcs/sources_1/ip/xadc_wiz_0_1/xadc_wiz_0.xci
+set_property used_in_implementation false [get_files -all d:/flySimulation/flySimulation.srcs/sources_1/ip/xadc_wiz_0_1/xadc_wiz_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/flySimulation/flySimulation.srcs/sources_1/ip/xadc_wiz_0_1/xadc_wiz_0.xdc]
 
-read_ip -quiet D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/clk_wiz_0/ip/clk_wiz_0_1/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/clk_wiz_0/ip/clk_wiz_0_1/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/clk_wiz_0/ip/clk_wiz_0_1/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all d:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/clk_wiz_0/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc]
+read_ip -quiet D:/flySimulation/flySimulation.srcs/clk_wiz_0/ip/clk_wiz_0_1/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all d:/flySimulation/flySimulation.srcs/clk_wiz_0/ip/clk_wiz_0_1/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all d:/flySimulation/flySimulation.srcs/clk_wiz_0/ip/clk_wiz_0_1/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all d:/flySimulation/flySimulation.srcs/clk_wiz_0/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -124,8 +121,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc
-set_property used_in_implementation false [get_files D:/flyHDMI/flyHDMI2v4/flyHDMI2v4.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc]
+read_xdc D:/flySimulation/flySimulation.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc
+set_property used_in_implementation false [get_files D:/flySimulation/flySimulation.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
