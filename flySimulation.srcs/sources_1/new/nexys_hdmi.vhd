@@ -57,6 +57,23 @@ component clk_wiz_0 is port(
 	reset: in std_logic);
 end component;
 
+component pwm is port(
+        clk     : in  STD_LOGIC;
+        rst     : in  STD_LOGIC;
+        duty    : in  STD_LOGIC_VECTOR (7 downto 0);
+        pwm_out : out STD_LOGIC);
+end component;
+
+component clockDivider is
+	Generic(
+	   DIV_FACTOR: integer);
+	Port (
+        clk_in  : in  STD_LOGIC;
+        rst     : in  STD_LOGIC;
+        clk_out : out STD_LOGIC
+    );
+end component;
+
 component vga_800 is port(
 	clk_vga: in std_logic;
 	horizontal_counter : out integer range 0 to 2047;
@@ -100,7 +117,7 @@ component blk_mem_gen_0 is port (
 end component;
 
 component p13_UART is
-	generic(
+	Generic(
 	clk_freq: integer;
 	baudrate: integer);
 	Port (
@@ -137,6 +154,12 @@ end component;
 
 -- Clk
 signal clk_out: std_logic:='0';
+signal clk_pwm: std_logic:='0';
+
+-- PWM
+signal rstSignal: std_logic:='0';
+signal pwmPin: std_logic:='0';
+signal pwmSignal: std_logic:='0';
 
 -- open loop rotation
 signal integer_rotate_speed: integer range 0 to 255:= 0;
@@ -261,6 +284,21 @@ vga0: vga_800 port map(
         vid_screen_v => vid_screen_v_int,
         vid_screen_h => vid_screen_h_int,
         frame_out => frame);
+       
+clockDivider0: clockDivider       
+        GENERIC MAP(
+        DIV_FACTOR => 39062) -- Clock Divider change f_clk / (256/f_blink) example 40 000 000 Hz / (256 * 4 Hz)!!!!
+        PORT MAP(
+        clk_in => clk_out,
+        rst => rstSignal,
+        clk_out => clk_pwm);  
+        
+pwm0: pwm
+        port map(
+        clk => clk_pwm,
+        rst => rstSignal,
+        duty => STD_LOGIC_VECTOR(to_unsigned(127, 8)),
+        pwm_out => pwmSignal);
         
 u0: p13_UART
                     GENERIC MAP(
@@ -297,7 +335,9 @@ xadc: xadc_wiz_0 port map(
         
 process begin
 
-LED(7 downto 0) <= std_logic_vector(to_unsigned(integer_rotate_speed, 8));
+--LED(7 downto 0) <= std_logic_vector(to_unsigned(integer_rotate_speed, 8));
+LED(0) <= pwmPin and pwmSignal;
+ja(0) <= pwmPin and pwmSignal;
 
 wait until rising_edge(clk_out);
 
@@ -335,6 +375,9 @@ if (si_state_uart = 1) then
         when 16#53# =>
             uart_on_off <= uart_on_off xor '1';
             -- ASCII 'S'
+        when 16#4C# =>
+            pwmPin <= pwmPin xor '1';    
+            -- ASCII 'L'
         when 16#31# =>
             uart_mem_offset <= 0;
             -- ASCII '1'

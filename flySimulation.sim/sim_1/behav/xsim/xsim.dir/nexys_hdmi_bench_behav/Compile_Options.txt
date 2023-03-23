@@ -1,0 +1,1 @@
+-wto "7781d92e824946d4ba7d1b41dc8712c7" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "blk_mem_gen_v8_4_4" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "nexys_hdmi_bench_behav" "xil_defaultlib.nexys_hdmi_bench" "xil_defaultlib.glbl" -log "elaborate.log" 

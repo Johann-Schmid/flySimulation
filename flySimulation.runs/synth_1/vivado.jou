@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Mar 23 09:30:30 2023
-# Process ID: 18636
+# Start of session at: Thu Mar 23 15:23:59 2023
+# Process ID: 29316
 # Current directory: D:/flySimulation/flySimulation.runs/synth_1
 # Command line: vivado.exe -log nexys_hdmi.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source nexys_hdmi.tcl
 # Log file: D:/flySimulation/flySimulation.runs/synth_1/nexys_hdmi.vds

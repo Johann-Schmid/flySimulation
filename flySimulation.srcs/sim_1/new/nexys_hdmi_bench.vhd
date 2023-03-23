@@ -44,9 +44,16 @@ component nexys_hdmi is Port(
     hdmi_tx_n: out std_logic_vector (2 downto 0);
     hdmi_tx_p: out std_logic_vector (2 downto 0);
     LED: out std_logic_vector(7 downto 0);
-    SW: in std_logic_vector (7 downto 0)
+    xadc_p		   : in std_logic;
+    xadc_n         : in std_logic;
+    vauxp1    : in std_logic;
+    vauxn1    : in std_logic;
+    RsRx: in std_logic;
+    RsTx: out std_logic
 );
 end component;
+
+signal RsTx: std_logic:='0';
 
 signal clk_in: std_logic:='0';
 
@@ -67,11 +74,14 @@ uut: nexys_hdmi port map(
     hdmi_tx_n => hdmi_n,
     hdmi_tx_p => hdmi_p,
     LED => sigLed,
-    SW => sw_in
+    xadc_p => '0',
+    xadc_n => '0',       
+    vauxp1 => '0',    
+    vauxn1 => '0',
+    RsRx => '0',
+    RsTx => RsTx
 );
 
 clk_in <= not clk_in after clk_in_half_period;
-
-sw_in <= "00001000";
 
 end Behavioral;

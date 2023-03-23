@@ -5,18 +5,24 @@
    <db_ref_list>
       <db_ref path="nexys_hdmi_bench_behav.wdb" id="1">
          <top_modules>
-            <top_module name="dvi_constants" />
             <top_module name="glbl" />
             <top_module name="nexys_hdmi_bench" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="2523978850544fs"></ZoomStartTime>
-      <ZoomEndTime time="2660880582225fs"></ZoomEndTime>
-      <Cursor1Time time="1351540500000fs"></Cursor1Time>
+      <ZoomStartTime time="1899837fs"></ZoomStartTime>
+      <ZoomEndTime time="2241338fs"></ZoomEndTime>
+      <Cursor1Time time="2183837fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="18" />
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="21" />
+   <wave_markers>
+      <marker time="1934337" label="" />
+   </wave_markers>
    <wvobject fp_name="/nexys_hdmi_bench/clk_in" type="logic">
       <obj_property name="ElementShortName">clk_in</obj_property>
       <obj_property name="ObjectShortName">clk_in</obj_property>
@@ -82,11 +88,23 @@
       <obj_property name="ObjectShortName">si_rotate_screen[1:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/nexys_hdmi_bench/uut/mem_addrb" type="array">
-      <obj_property name="ElementShortName">mem_addrb[10:0]</obj_property>
-      <obj_property name="ObjectShortName">mem_addrb[10:0]</obj_property>
+      <obj_property name="ElementShortName">mem_addrb[11:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_addrb[11:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/nexys_hdmi_bench/uut/mem_addra" type="array">
-      <obj_property name="ElementShortName">mem_addra[10:0]</obj_property>
-      <obj_property name="ObjectShortName">mem_addra[10:0]</obj_property>
+      <obj_property name="ElementShortName">mem_addra[11:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_addra[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/clockDivider0/clk_out" type="logic">
+      <obj_property name="ElementShortName">clk_out</obj_property>
+      <obj_property name="ObjectShortName">clk_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/pwm0/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/nexys_hdmi_bench/uut/pwm0/pwm_out" type="logic">
+      <obj_property name="ElementShortName">pwm_out</obj_property>
+      <obj_property name="ObjectShortName">pwm_out</obj_property>
    </wvobject>
 </wave_config>

@@ -1,0 +1,69 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 7781d92e824946d4ba7d1b41dc8712c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot nexys_hdmi_bench_behav xil_defaultlib.nexys_hdmi_bench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_axi_regs_fwd_v8_4(C_DATA...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_gen_0
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=42,CLKIN...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=20,CLKIN...
+Compiling module unisims_ver.FDPE_default
+Compiling module xil_defaultlib.rgb2dvi_0_SyncAsync_6
+Compiling module xil_defaultlib.rgb2dvi_0_ResetBridge_5
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.rgb2dvi_0_SyncAsync__parameteriz...
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.FDCE(INIT=1'b1)
+Compiling module xil_defaultlib.rgb2dvi_0_ClockGen
+Compiling module unisims_ver.OBUFDS
+Compiling module unisims_ver.OSERDESE2(DATA_RATE_TQ="SDR",DAT...
+Compiling module unisims_ver.OSERDESE2(DATA_RATE_TQ="SDR",DAT...
+Compiling module xil_defaultlib.rgb2dvi_0_OutputSERDES
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.FDSE_default
+Compiling module xil_defaultlib.rgb2dvi_0_TMDS_Encoder
+Compiling module xil_defaultlib.rgb2dvi_0_OutputSERDES_0
+Compiling module xil_defaultlib.rgb2dvi_0_TMDS_Encoder_1
+Compiling module xil_defaultlib.rgb2dvi_0_OutputSERDES_2
+Compiling module xil_defaultlib.rgb2dvi_0_TMDS_Encoder_3
+Compiling module xil_defaultlib.rgb2dvi_0_OutputSERDES_4
+Compiling module xil_defaultlib.rgb2dvi_0_SyncAsync
+Compiling module xil_defaultlib.rgb2dvi_0_ResetBridge
+Compiling module xil_defaultlib.rgb2dvi_0_rgb2dvi
+Compiling module xil_defaultlib.rgb2dvi_0
+Compiling architecture behavioral of entity xil_defaultlib.vga_800 [vga_800_default]
+Compiling architecture behavioral of entity xil_defaultlib.clockDivider [clockdivider_default]
+Compiling architecture behavioral of entity xil_defaultlib.pwm [pwm_default]
+Compiling architecture behavioral of entity xil_defaultlib.p13_UART [\p13_UART(clk_freq=40000000,baud...]
+Compiling module unisims_ver.XADC(INIT_40=16'b010010000010001...
+Compiling module xil_defaultlib.xadc_wiz_0
+Compiling architecture behavioral of entity xil_defaultlib.nexys_hdmi [nexys_hdmi_default]
+Compiling architecture behavioral of entity xil_defaultlib.nexys_hdmi_bench
+Built simulation snapshot nexys_hdmi_bench_behav

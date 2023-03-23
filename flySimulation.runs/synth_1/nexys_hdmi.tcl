@@ -70,6 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 1
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
 
@@ -90,6 +92,8 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 add_files D:/flySimulation/flySimulation.srcs/sources_1/imports/flyRGB2v2/mem_t_new.coe
 read_vhdl -library xil_defaultlib {
+  D:/flySimulation/flySimulation.srcs/sources_1/new/clockDivider.vhd
+  D:/flySimulation/flySimulation.srcs/sources_1/new/pwm.vhd
   D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_10/uart.vhd
   D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_6/vga_hdmi.vhd
   D:/flySimulation/flySimulation.srcs/sources_1/new/nexys_hdmi.vhd

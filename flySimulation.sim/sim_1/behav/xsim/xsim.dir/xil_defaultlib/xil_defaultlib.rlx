@@ -1,0 +1,16 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+D:/flySimulation/flySimulation.ip_user_files/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v,1678711756,verilog,,,,blk_mem_gen_0,,,../../../../flySimulation.srcs/clk_wiz_0/ip/clk_wiz_0_1,,,,,
+D:/flySimulation/flySimulation.ip_user_files/ip/clk_wiz_0_1/clk_wiz_0.v,1678708272,verilog,,D:/flySimulation/flySimulation.ip_user_files/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v,,clk_wiz_0,,,../../../../flySimulation.srcs/clk_wiz_0/ip/clk_wiz_0_1,,,,,
+D:/flySimulation/flySimulation.ip_user_files/ip/clk_wiz_0_1/clk_wiz_0_clk_wiz.v,1678708272,verilog,,D:/flySimulation/flySimulation.ip_user_files/ip/clk_wiz_0_1/clk_wiz_0.v,,clk_wiz_0_clk_wiz,,,../../../../flySimulation.srcs/clk_wiz_0/ip/clk_wiz_0_1,,,,,
+D:/flySimulation/flySimulation.ip_user_files/ip/xadc_wiz_0_1/xadc_wiz_0.v,1678708270,verilog,,D:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0_sim_netlist.v,,xadc_wiz_0,,,../../../../flySimulation.srcs/clk_wiz_0/ip/clk_wiz_0_1,,,,,
+D:/flySimulation/flySimulation.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+D:/flySimulation/flySimulation.srcs/sim_1/new/nexys_hdmi_bench.vhd,1679571049,vhdl,,,,nexys_hdmi_bench,,,,,,,,
+D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_10/uart.vhd,1679569573,vhdl,,,,p13_uart,,,,,,,,
+D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_6/vga_hdmi.vhd,1553171268,vhdl,,,,vga_800,,,,,,,,
+D:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0_sim_netlist.v,1556627406,verilog,,D:/flySimulation/flySimulation.ip_user_files/ip/clk_wiz_0_1/clk_wiz_0_clk_wiz.v,,rgb2dvi_0;rgb2dvi_0_ClockGen;rgb2dvi_0_OutputSERDES;rgb2dvi_0_OutputSERDES_0;rgb2dvi_0_OutputSERDES_2;rgb2dvi_0_OutputSERDES_4;rgb2dvi_0_ResetBridge;rgb2dvi_0_ResetBridge_5;rgb2dvi_0_SyncAsync;rgb2dvi_0_SyncAsync_6;rgb2dvi_0_SyncAsync__parameterized1;rgb2dvi_0_TMDS_Encoder;rgb2dvi_0_TMDS_Encoder_1;rgb2dvi_0_TMDS_Encoder_3;rgb2dvi_0_rgb2dvi,,,../../../../flySimulation.srcs/clk_wiz_0/ip/clk_wiz_0_1,,,,,
+D:/flySimulation/flySimulation.srcs/sources_1/new/clockDivider.vhd,1679571215,vhdl,,,,clockdivider,,,,,,,,
+D:/flySimulation/flySimulation.srcs/sources_1/new/nexys_hdmi.vhd,1679571409,vhdl,,,,nexys_hdmi,,,,,,,,
+D:/flySimulation/flySimulation.srcs/sources_1/new/pwm.vhd,1679565276,vhdl,,,,pwm,,,,,,,,

@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 
 entity p13_UART is
-	generic(
+	Generic(
 	clk_freq: integer;
 	baudrate: integer);
 	Port (

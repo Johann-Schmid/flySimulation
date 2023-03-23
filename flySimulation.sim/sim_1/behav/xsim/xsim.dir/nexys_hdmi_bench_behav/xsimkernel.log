@@ -1,0 +1,7 @@
+Running: xsim.dir/nexys_hdmi_bench_behav/xsimk.exe -simmode gui -wdb nexys_hdmi_bench_behav.wdb -simrunnum 0 -socket 64196
+Design successfully loaded
+Design Loading Memory Usage: 14236 KB (Peak: 14236 KB)
+Design Loading CPU Usage: 77 ms
+Simulation completed
+Simulation Memory Usage: 26044 KB (Peak: 26044 KB)
+Simulation CPU Usage: 62389 ms
