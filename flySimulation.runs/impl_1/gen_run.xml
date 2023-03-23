@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1678973131">
+<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1679561241">
   <File Type="BITSTR-BMM" Name="nexys_hdmi_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="nexys_hdmi_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="nexys_hdmi_timing_summary_init.rpt"/>

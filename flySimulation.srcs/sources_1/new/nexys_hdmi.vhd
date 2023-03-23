@@ -315,10 +315,10 @@ if (si_state_uart = 1) then
             si_rotate_screen_uart <= "00";
             -- ASCII 's'
         when 16#6C# =>
-            si_rotate_screen_uart <= "01";
+            si_rotate_screen_uart <= "10";
             -- ASCII 'l'
         when 16#72# =>
-            si_rotate_screen_uart <= "10";
+            si_rotate_screen_uart <= "01";
             -- ASCII 'r'
         when 16#42# =>
             uart_vid_Data <= x"00FF00";
