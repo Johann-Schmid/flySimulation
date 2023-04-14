@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1680789918">
   <File Type="PA-TCL" Name="nexys_hdmi.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="nexys_hdmi_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="nexys_hdmi_reports.tcl"/>
   <File Type="RDS-RDS" Name="nexys_hdmi.vds"/>
   <File Type="RDS-UTIL" Name="nexys_hdmi_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="nexys_hdmi_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="nexys_hdmi.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="nexys_hdmi_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="nexys_hdmi_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci">
