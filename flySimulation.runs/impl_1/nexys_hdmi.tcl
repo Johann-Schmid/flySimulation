@@ -116,40 +116,161 @@ proc step_failed { step } {
 
 
 OPTRACE "Implementation" START { ROLLUP_1 }
-OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
-OPTRACE "write_bitstream setup" START { }
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
+OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
+start_step init_design
+set ACTIVE_STEP init_design
 set rc [catch {
-  create_msg_db write_bitstream.pb
+  create_msg_db init_design.pb
   set_param chipscope.maxJobs 1
   set_param xicom.use_bs_reader 1
-  open_checkpoint nexys_hdmi_routed.dcp
+OPTRACE "create in-memory project" START { }
+  create_project -in_memory -part xc7a200tsbg484-1
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
+OPTRACE "create in-memory project" END { }
+OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir D:/flySimulation/flySimulation.cache/wt [current_project]
-set_property TOP nexys_hdmi [current_fileset]
-OPTRACE "read constraints: write_bitstream" START { }
-OPTRACE "read constraints: write_bitstream" END { }
+  set_property parent.project_path D:/flySimulation/flySimulation.xpr [current_project]
+  set_property ip_repo_paths D:/../../vivado-library-master [current_project]
+  update_ip_catalog
+  set_property ip_output_repo D:/flySimulation/flySimulation.cache/ip [current_project]
+  set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  catch { write_mem_info -force nexys_hdmi.mmi }
-OPTRACE "write_bitstream setup" END { }
-OPTRACE "write_bitstream" START { }
-  write_bitstream -force nexys_hdmi.bit 
-OPTRACE "write_bitstream" END { }
-OPTRACE "write_bitstream misc" START { }
-OPTRACE "read constraints: write_bitstream_post" START { }
-OPTRACE "read constraints: write_bitstream_post" END { }
-  catch {write_debug_probes -quiet -force nexys_hdmi}
-  catch {file copy -force nexys_hdmi.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
+OPTRACE "set parameters" END { }
+OPTRACE "add files" START { }
+  add_files -quiet D:/flySimulation/flySimulation.runs/synth_1/nexys_hdmi.dcp
+  read_ip -quiet D:/flySimulation/flySimulation.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+  read_ip -quiet D:/flySimulation/flySimulation.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0.xci
+  read_ip -quiet D:/flySimulation/flySimulation.srcs/sources_1/ip/xadc_wiz_0_1/xadc_wiz_0.xci
+  read_ip -quiet D:/flySimulation/flySimulation.srcs/clk_wiz_0/ip/clk_wiz_0_1/clk_wiz_0.xci
+OPTRACE "read constraints: implementation" START { }
+  read_xdc D:/flySimulation/flySimulation.srcs/constrs_1/imports/project_3/NexysVideo_Master.xdc
+OPTRACE "read constraints: implementation" END { }
+OPTRACE "add files" END { }
+OPTRACE "link_design" START { }
+  link_design -top nexys_hdmi -part xc7a200tsbg484-1
+OPTRACE "link_design" END { }
+OPTRACE "gray box cells" START { }
+OPTRACE "gray box cells" END { }
+OPTRACE "init_design_reports" START { REPORT }
+OPTRACE "init_design_reports" END { }
+OPTRACE "init_design_write_hwdef" START { }
+OPTRACE "init_design_write_hwdef" END { }
+  close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
-  step_failed write_bitstream
+  step_failed init_design
   return -code error $RESULT
 } else {
-  end_step write_bitstream
+  end_step init_design
   unset ACTIVE_STEP 
 }
 
-OPTRACE "write_bitstream misc" END { }
-OPTRACE "Phase: Write Bitstream" END { }
+OPTRACE "Phase: Init Design" END { }
+OPTRACE "Phase: Opt Design" START { ROLLUP_AUTO }
+start_step opt_design
+set ACTIVE_STEP opt_design
+set rc [catch {
+  create_msg_db opt_design.pb
+OPTRACE "read constraints: opt_design" START { }
+OPTRACE "read constraints: opt_design" END { }
+OPTRACE "opt_design" START { }
+  opt_design 
+OPTRACE "opt_design" END { }
+OPTRACE "read constraints: opt_design_post" START { }
+OPTRACE "read constraints: opt_design_post" END { }
+OPTRACE "Opt Design: write_checkpoint" START { CHECKPOINT }
+  write_checkpoint -force nexys_hdmi_opt.dcp
+OPTRACE "Opt Design: write_checkpoint" END { }
+OPTRACE "opt_design reports" START { REPORT }
+  create_report "impl_1_opt_report_drc_0" "report_drc -file nexys_hdmi_drc_opted.rpt -pb nexys_hdmi_drc_opted.pb -rpx nexys_hdmi_drc_opted.rpx"
+OPTRACE "opt_design reports" END { }
+  close_msg_db -file opt_design.pb
+} RESULT]
+if {$rc} {
+  step_failed opt_design
+  return -code error $RESULT
+} else {
+  end_step opt_design
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "Phase: Opt Design" END { }
+OPTRACE "Phase: Place Design" START { ROLLUP_AUTO }
+start_step place_design
+set ACTIVE_STEP place_design
+set rc [catch {
+  create_msg_db place_design.pb
+OPTRACE "read constraints: place_design" START { }
+OPTRACE "read constraints: place_design" END { }
+  if { [llength [get_debug_cores -quiet] ] > 0 }  { 
+OPTRACE "implement_debug_core" START { }
+    implement_debug_core 
+OPTRACE "implement_debug_core" END { }
+  } 
+OPTRACE "place_design" START { }
+  place_design 
+OPTRACE "place_design" END { }
+OPTRACE "read constraints: place_design_post" START { }
+OPTRACE "read constraints: place_design_post" END { }
+OPTRACE "Place Design: write_checkpoint" START { CHECKPOINT }
+  write_checkpoint -force nexys_hdmi_placed.dcp
+OPTRACE "Place Design: write_checkpoint" END { }
+OPTRACE "place_design reports" START { REPORT }
+  create_report "impl_1_place_report_io_0" "report_io -file nexys_hdmi_io_placed.rpt"
+  create_report "impl_1_place_report_utilization_0" "report_utilization -file nexys_hdmi_utilization_placed.rpt -pb nexys_hdmi_utilization_placed.pb"
+  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file nexys_hdmi_control_sets_placed.rpt"
+OPTRACE "place_design reports" END { }
+  close_msg_db -file place_design.pb
+} RESULT]
+if {$rc} {
+  step_failed place_design
+  return -code error $RESULT
+} else {
+  end_step place_design
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "Phase: Place Design" END { }
+OPTRACE "Phase: Route Design" START { ROLLUP_AUTO }
+start_step route_design
+set ACTIVE_STEP route_design
+set rc [catch {
+  create_msg_db route_design.pb
+OPTRACE "read constraints: route_design" START { }
+OPTRACE "read constraints: route_design" END { }
+OPTRACE "route_design" START { }
+  route_design 
+OPTRACE "route_design" END { }
+OPTRACE "read constraints: route_design_post" START { }
+OPTRACE "read constraints: route_design_post" END { }
+OPTRACE "Route Design: write_checkpoint" START { CHECKPOINT }
+  write_checkpoint -force nexys_hdmi_routed.dcp
+OPTRACE "Route Design: write_checkpoint" END { }
+OPTRACE "route_design reports" START { REPORT }
+  create_report "impl_1_route_report_drc_0" "report_drc -file nexys_hdmi_drc_routed.rpt -pb nexys_hdmi_drc_routed.pb -rpx nexys_hdmi_drc_routed.rpx"
+  create_report "impl_1_route_report_methodology_0" "report_methodology -file nexys_hdmi_methodology_drc_routed.rpt -pb nexys_hdmi_methodology_drc_routed.pb -rpx nexys_hdmi_methodology_drc_routed.rpx"
+  create_report "impl_1_route_report_power_0" "report_power -file nexys_hdmi_power_routed.rpt -pb nexys_hdmi_power_summary_routed.pb -rpx nexys_hdmi_power_routed.rpx"
+  create_report "impl_1_route_report_route_status_0" "report_route_status -file nexys_hdmi_route_status.rpt -pb nexys_hdmi_route_status.pb"
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file nexys_hdmi_timing_summary_routed.rpt -pb nexys_hdmi_timing_summary_routed.pb -rpx nexys_hdmi_timing_summary_routed.rpx -warn_on_violation "
+  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file nexys_hdmi_incremental_reuse_routed.rpt"
+  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file nexys_hdmi_clock_utilization_routed.rpt"
+  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file nexys_hdmi_bus_skew_routed.rpt -pb nexys_hdmi_bus_skew_routed.pb -rpx nexys_hdmi_bus_skew_routed.rpx"
+OPTRACE "route_design reports" END { }
+OPTRACE "route_design misc" START { }
+  close_msg_db -file route_design.pb
+OPTRACE "route_design write_checkpoint" START { CHECKPOINT }
+OPTRACE "route_design write_checkpoint" END { }
+} RESULT]
+if {$rc} {
+  write_checkpoint -force nexys_hdmi_routed_error.dcp
+  step_failed route_design
+  return -code error $RESULT
+} else {
+  end_step route_design
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "route_design misc" END { }
+OPTRACE "Phase: Route Design" END { }
 OPTRACE "Implementation" END { }

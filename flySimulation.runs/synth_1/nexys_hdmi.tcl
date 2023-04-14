@@ -94,6 +94,7 @@ add_files D:/flySimulation/flySimulation.srcs/sources_1/imports/flyRGB2v2/mem_t_
 read_vhdl -library xil_defaultlib {
   D:/flySimulation/flySimulation.srcs/sources_1/new/clockDivider.vhd
   D:/flySimulation/flySimulation.srcs/sources_1/new/pwm.vhd
+  D:/flySimulation/flySimulation.srcs/sources_1/new/rxByteUart.vhd
   D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_10/uart.vhd
   D:/flySimulation/flySimulation.srcs/sources_1/imports/brems/project_6/vga_hdmi.vhd
   D:/flySimulation/flySimulation.srcs/sources_1/new/nexys_hdmi.vhd

@@ -35,23 +35,23 @@ entity pwm is
     Port (
         clk     : in  STD_LOGIC;
         rst     : in  STD_LOGIC;
-        duty    : in  STD_LOGIC_VECTOR (7 downto 0);
+        duty    : in  integer range 0 to 255;
         pwm_out : out STD_LOGIC
     );
 end pwm;
 
 architecture Behavioral of pwm is
-    signal counter : unsigned(7 downto 0) := (others => '0');
+    signal counter : integer range 0 to 255:= 0;
 begin
 
     process (clk, rst)
     begin
         if rst = '1' then
-            counter <= (others => '0');
+            counter <= 0;
             pwm_out <= '0';
         elsif rising_edge(clk) then
             counter <= counter + 1;
-            if counter < unsigned(duty) then
+            if counter < duty then
                 pwm_out <= '1';
             else
                 pwm_out <= '0';

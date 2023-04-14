@@ -15,7 +15,7 @@
 -- Revision:
 -- Revision 0.01 - File Created
 -- Additional Comments:
--- 800 x 600@60Hz
+-- 800 x 600@60Hz Pixel clock 40Mhz
 ----------------------------------------------------------------------------------
 
 
@@ -57,10 +57,27 @@ component clk_wiz_0 is port(
 	reset: in std_logic);
 end component;
 
+component rxByteUart is 
+	Generic(
+	   TIMEOUT_THRESHOLD: integer);
+	Port (
+        clk     : in  STD_LOGIC;
+        rst     : in  STD_LOGIC;
+        uart_start_out    : in  STD_LOGIC;
+        uart_byte_out: in std_logic_vector(7 downto 0);
+        si_rotate_screen_uart : out STD_LOGIC_VECTOR(1 downto 0);
+        uart_vid_Data: out STD_LOGIC_VECTOR(23 downto 0);
+        uart_integer_rotate_speed: out integer range 0 to 255;
+        uart_integer_pwm_speed: out integer range 0 to 255;
+        uart_mem_offset: out integer range 0 to 4095;
+        uart_on_off: out std_logic;
+        timeout_flag: out std_logic);
+end component;        
+
 component pwm is port(
         clk     : in  STD_LOGIC;
         rst     : in  STD_LOGIC;
-        duty    : in  STD_LOGIC_VECTOR (7 downto 0);
+        duty    : in  integer range 0 to 255;
         pwm_out : out STD_LOGIC);
 end component;
 
@@ -116,7 +133,7 @@ component blk_mem_gen_0 is port (
   );
 end component;
 
-component p13_UART is
+component rxTxUart is
 	Generic(
 	clk_freq: integer;
 	baudrate: integer);
@@ -163,7 +180,8 @@ signal pwmSignal: std_logic:='0';
 
 -- open loop rotation
 signal integer_rotate_speed: integer range 0 to 255:= 0;
-signal uart_integer_rotate_speed: integer range 0 to 255:= 0;
+signal uart_integer_rotate_speed: integer range 0 to 255:= 1;
+signal uart_integer_pwm_speed: integer range 0 to 255:= 128;
 
 -- Video
 signal vid_Data: STD_LOGIC_VECTOR(23 downto 0):= (others => '1');
@@ -224,6 +242,7 @@ signal uart_byte_out, uart_byte_in: std_logic_vector(7 downto 0):=(others => '0'
 signal si_rotate_screen_uart: std_logic_vector(1 downto 0):= (others => '0');
 signal si_state_uart: integer range 0 to 7:= 0;
 signal uart_vid_Data: STD_LOGIC_VECTOR(23 downto 0):= (others => '1');
+signal timeout_flag: std_logic:= '0';
 
 -- AD Converter
 signal eoc_xadc: std_logic:='0';
@@ -253,6 +272,22 @@ blk_mem: blk_mem_gen_0 port map(
     enb => mem_enb,
     addrb => mem_addrb,
     doutb => mem_doutb);
+    
+rxByteUart0: rxByteUart 
+    GENERIC MAP(
+        TIMEOUT_THRESHOLD => 40000000) -- Frequenz ändern!!!!
+    port map(
+        clk => clk_out,
+        rst => rstSignal,
+        uart_start_out => uart_start_out,
+        uart_byte_out => uart_byte_out,
+        si_rotate_screen_uart => si_rotate_screen_uart,
+        uart_vid_Data => uart_vid_Data,
+        uart_integer_rotate_speed => uart_integer_rotate_speed,
+        uart_integer_pwm_speed => uart_integer_pwm_speed,
+        uart_mem_offset => uart_mem_offset,
+        uart_on_off => uart_on_off,
+        timeout_flag => timeout_flag);
 
 pll0: clk_wiz_0 port map(
     clk_in1 => CLK,
@@ -297,22 +332,22 @@ pwm0: pwm
         port map(
         clk => clk_pwm,
         rst => rstSignal,
-        duty => STD_LOGIC_VECTOR(to_unsigned(127, 8)),
+        duty => uart_integer_pwm_speed,
         pwm_out => pwmSignal);
         
-u0: p13_UART
-                    GENERIC MAP(
-                    clk_freq => 40000000, -- Frequenz ändern!!!!
-                    baudrate => 115200)
-                    PORT MAP(
-                    clk => clk_out,
-                    ready => ready_out,
-                    start_snd => uart_start_in,
-                    start_rcv => uart_start_out,
-                    tx => RsTx,
-                    rx => RsRx,
-                    byte_rcv => uart_byte_out,
-                    byte_snd => uart_byte_in);       
+uart0: rxTxUart
+        GENERIC MAP(
+        clk_freq => 40000000, -- Frequenz ändern!!!!
+        baudrate => 115200)
+        PORT MAP(
+        clk => clk_out,
+        ready => ready_out,
+        start_snd => uart_start_in,
+        start_rcv => uart_start_out,
+        tx => RsTx,
+        rx => RsRx,
+        byte_rcv => uart_byte_out,
+        byte_snd => uart_byte_in);       
 
 xadc: xadc_wiz_0 port map(
         daddr_in    => "0010001", -- 19,
@@ -336,88 +371,13 @@ xadc: xadc_wiz_0 port map(
 process begin
 
 --LED(7 downto 0) <= std_logic_vector(to_unsigned(integer_rotate_speed, 8));
+LED(1) <= timeout_flag;
 LED(0) <= pwmPin and pwmSignal;
 ja(0) <= pwmPin and pwmSignal;
 
 wait until rising_edge(clk_out);
 
---##################################### UART Rx#################################################
 
-if (uart_start_out = '1') and (si_state_uart = 0) then
-    si_uart_byte <= to_integer(unsigned(uart_byte_out));
-    si_state_uart <= 1;
-else
-end if;
-
-if (si_state_uart = 1) then
-    case si_uart_byte is
-        when 16#73# =>
-            si_rotate_screen_uart <= "00";
-            -- ASCII 's'
-        when 16#6C# =>
-            si_rotate_screen_uart <= "10";
-            -- ASCII 'l'
-        when 16#72# =>
-            si_rotate_screen_uart <= "01";
-            -- ASCII 'r'
-        when 16#42# =>
-            uart_vid_Data <= x"00FF00";
-            -- ASCII 'B'
-        when 16#44# => 
-            uart_vid_Data <= x"00FFFF";
-            -- ASCII 'D'
-        when 16#47# =>
-            uart_vid_Data <= x"0000FF";
-            -- ASCII 'G'
-        when 16#57# =>
-            uart_vid_Data <= (others => '1');
-            -- ASCII 'W'
-        when 16#53# =>
-            uart_on_off <= uart_on_off xor '1';
-            -- ASCII 'S'
-        when 16#4C# =>
-            pwmPin <= pwmPin xor '1';    
-            -- ASCII 'L'
-        when 16#31# =>
-            uart_mem_offset <= 0;
-            -- ASCII '1'
---            si_value_pixel <= 0;
-        when 16#32# =>
-            uart_mem_offset <= 600;
-            -- ASCII '2'
---            si_value_pixel <= 0;
-        when 16#33# =>
-            uart_mem_offset <= 1200;
-            si_value_pixel <= 0;
-            -- ASCII '3'
-        when 16#34# =>
-            uart_mem_offset <= 1800;
-            si_value_pixel <= 0;
-            -- ASCII '4'
-        when 16#2D# =>
-            uart_sig_sign <= '1';
-            -- ASCII '-'
-        when 16#2B# =>
-            uart_sig_sign <= '0';
-            -- ASCII '+'
-        when 16#3C# =>
-            uart_integer_rotate_speed <= integer_rotate_speed - 1;
-            -- ASCII '<'
-        when 16#3E# =>
-            uart_integer_rotate_speed <= integer_rotate_speed + 1;
-            -- ASCII '>'
-        when others =>
-            uart_mem_offset <= 0;    
-    end case;
-    si_state_uart <= 2;
-else
-end if;
-
-if (si_state_uart = 2) then
-    si_uart_byte <= 0;
-    si_state_uart <= 0;
-else
-end if;
 
 -- ####################### Calculate frame uart ########################### 
     if (drdy_xadc = '1') and (si_state = 0) and (frame = '0') and (si_calc_uart = 0) then
@@ -585,18 +545,18 @@ if (si_state_frame = 1) and (si_state_vga = 7) then
     when "00" =>
             if (sig_sign = '1') then 
                 if (si_ad_value_sign = '0') and (si_ad_value_picture > 0) then
-                    si_ad_change_buffer <= std_logic_vector(rotate_left(unsigned(si_buffer), si_ad_value_picture));
+                    si_ad_change_buffer <= std_logic_vector(rotate_left(unsigned(si_buffer), si_ad_value_picture*integer_rotate_speed));
                 else
-                    si_ad_change_buffer <= std_logic_vector(rotate_right(unsigned(si_buffer), si_ad_value_picture));
+                    si_ad_change_buffer <= std_logic_vector(rotate_right(unsigned(si_buffer), si_ad_value_picture*integer_rotate_speed));
                 end if;
             else
             end if;
 
             if (sig_sign = '0') then 
                 if (si_ad_value_sign = '0') and (si_ad_value_picture > 0) then
-                    si_ad_change_buffer <= std_logic_vector(rotate_right(unsigned(si_buffer), si_ad_value_picture));
+                    si_ad_change_buffer <= std_logic_vector(rotate_right(unsigned(si_buffer), si_ad_value_picture*integer_rotate_speed));
                 else
-                    si_ad_change_buffer <= std_logic_vector(rotate_left(unsigned(si_buffer), si_ad_value_picture));
+                    si_ad_change_buffer <= std_logic_vector(rotate_left(unsigned(si_buffer), si_ad_value_picture*integer_rotate_speed));
                 end if;
             else
             end if;

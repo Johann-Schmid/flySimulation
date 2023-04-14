@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 
-entity p13_UART is
+entity rxTxUart is
 	Generic(
 	clk_freq: integer;
 	baudrate: integer);
@@ -16,9 +16,9 @@ entity p13_UART is
 	rx : in std_logic;
 	ready : out std_logic
 	);
-end p13_UART;
+end rxTxUart;
 
-architecture Behavioral of p13_UART is
+architecture Behavioral of rxTxUart is
 
 constant clockdivider_max: integer:=clk_freq/baudrate -1;
 constant clockdivider_max_halbe: integer:=(clk_freq/baudrate -1)/2;
